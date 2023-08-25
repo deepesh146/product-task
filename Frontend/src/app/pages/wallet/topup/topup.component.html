@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>{{data.heading}}</h2>
+<form [formGroup]="topupForm" class="example-form p-3">
+    <mat-dialog-content>
+
+
+        <div class="container">
+            <div class="font-weight-bold mb-3">
+                <p>Current Balance : {{balance}}</p>
+            </div>
+            <mat-form-field style="width: 100%;" appearance="outline" class="col-md-4">
+                <mat-label>Amount</mat-label>
+                <input [formControlName]="'amount'" matInput type="number" name="" id="">
+
+                <mat-error *ngIf="topupForm.get('amount')?.hasError('required')">Amount is required</mat-error>
+            </mat-form-field>
+
+
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>{{ data.cancelText }}</button>
+        <button mat-raised-button color="primary" (click)="submit()">{{data.submitText}}</button>
+    </mat-dialog-actions>
+</form>

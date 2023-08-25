@@ -1,0 +1,81 @@
+.mat-elevation {
+    overflow: auto;
+}
+
+.bg1{
+    background: none  !important;
+    border: 0 !important;
+  
+    span{
+        font-weight: bold;
+        font-style: italic;
+    }
+}
+
+.tr1 {
+    width: 100% !important;
+    overflow: auto;
+
+}
+
+mat-cell , mat-cell>span{
+     
+        // text-align: center;
+        // justify-content: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+      
+}
+mat-table {
+    table-layout: auto;
+    width: 100%; /* Optional: Set a width for the table */
+  }
+  
+  .mat-header-cell,
+  .mat-cell {
+    white-space: nowrap; /* Prevent text wrapping in cells */
+  }
+
+.mat-column-id {
+    // flex: 0 0 10%;
+    flex: none;
+    width: 5rem !important;
+}
+
+.mat-column-date {
+
+    // flex: 0 0 10%;
+    flex: none;
+    width: 10rem !important;
+}
+
+.mat-column-type {
+
+    // flex: 0 0 10%;
+    flex: none;
+    width: 10rem !important;
+}
+
+.mat-column-amount {
+
+    // flex: 0 0 10%;
+    flex: none;
+    width: 10rem !important;
+}
+
+.mat-column-productName {
+
+    // flex: 0 0 10%;
+    flex: none;
+    width: 20em !important;
+}
+
+
+.mat-column-productQuantity {
+
+    // flex: 0 0 10%;
+    flex: none;
+    width: 10rem !important;
+}

@@ -1,0 +1,54 @@
+.page {
+  color: white;
+  padding: 0 1rem;
+  background: #f1f5f9;
+  &__box {
+    min-height: 120px;
+    background: #1e293b;
+    margin: 0 -1rem;
+    font-size: 36px;
+  }
+  &__content {
+    min-height: calc(100vh - 178px);
+    border-radius: 10px;
+    margin-top: -2rem;
+    background: white;
+    color: black;
+    font-size: 2rem;
+    &-data {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+/* Apply styles to the mat-input container */
+.mat-form-field {
+  width: 100%;
+}
+
+/* Apply styles to the mat-input element */
+.mat-input-element {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+/* Highlight the input on focus */
+.mat-input-element:focus {
+  outline: none;
+  border-color: #3498db !important;
+}
+
+/* Adjust label styles */
+.mat-form-field-label {
+  font-size: 14px;
+}
+
+/* Styling for the placeholder text */
+::placeholder {
+  color: #999;
+}

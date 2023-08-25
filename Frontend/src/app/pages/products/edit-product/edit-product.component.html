@@ -1,0 +1,133 @@
+<!-- <div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Home</div>
+    <div class="page__content shadow p-3 position-relative">
+      <div class="page__content-data position-absolute text-center">
+        Home Content Goes Here
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="card mt-4">
+    <div class="d-flex bd-highlight mb-3 align-items-center">
+      <h2 class="mr-auto card-header py-3 font-bold">{{ptitle}}</h2>
+    </div>
+    <div class="card-body ">
+  
+      <form [attr.readonly]="disableForm ? true : null" [formGroup]="productForm" class="example-form p-3">
+        <h3 class="font-weight-bold">Product Details</h3>
+        <hr>
+        <div class="row">
+          <mat-form-field appearance="outline" class="example-full-width col-md-4">
+            <!-- Product Name -->
+            <mat-label>Product Name</mat-label>
+            <input [formControlName]="'name'" matInput type="text" required="" placeholder="Product Name">
+            <mat-error *ngFor="let message of validation('name')">
+              {{message}}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field  appearance="outline" class="col-md-4">
+            <mat-label>Category</mat-label>
+            <mat-select  [formControlName]="'category'" required>
+              <mat-option *ngFor="let category of productCategories" [value]="category">
+                {{ category }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngFor="let message of validation('category')">
+              {{message}}
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="example-full-width col-md-4">
+            <mat-label>SKU</mat-label>
+            <input [formControlName]="'sku'"  required matInput>
+            <mat-error *ngFor="let message of validation('sku')">
+              {{message}}
+            </mat-error>
+          </mat-form-field>
+  
+  
+          <mat-form-field  appearance="outline" class="example-full-width col-md-4">
+            <mat-label>Barcode</mat-label>
+            <input [formControlName]="'barcode'" required matInput>
+            <mat-error *ngFor="let message of validation('barcode')">
+              {{message}}
+            </mat-error>
+          </mat-form-field>
+  
+  
+          <mat-form-field  appearance="outline" class="example-full-width col-md-4">
+            <mat-label>Brand</mat-label>
+            <input [formControlName]="'brand'" matInput>
+            <mat-error *ngFor="let message of validation('brand')">
+              {{message}}
+            </mat-error>
+          </mat-form-field>
+          <mat-slide-toggle [formControlName]="'active'" class="col-md-2 d-flex align-items-center">
+            Active
+          </mat-slide-toggle>
+          <mat-error *ngFor="let message of validation('active')">
+            {{message}}
+          </mat-error>
+        </div>
+        <div class="row">
+  
+  
+          <mat-form-field  appearance="outline" class="example-full-width  col-md-8">
+            <mat-label>Description</mat-label>
+            <textarea [formControlName]="'description'" required matInput placeholder="Description"></textarea>
+            <mat-error *ngFor="let message of validation('description')">
+              {{message}}
+            </mat-error>
+          </mat-form-field>
+  
+  
+        </div>
+        <h3 class="font-weight-bold">Price & Stock Details</h3>
+        <hr>
+        <div class="row">
+          <mat-form-field appearance="outline" class="example-full-width col-md-3">
+            <mat-label>Stock</mat-label>
+            <input  [formControlName]="'stock'" required matInput type="number">
+            <mat-error *ngFor="let message of validation('stock')">
+              {{message}}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="example-full-width col-md-3">
+            <mat-label>Purchase Price</mat-label>
+            <input  [formControlName]="'cost'"  required matInput type="number">
+            <mat-error *ngFor="let message of validation('cost')">
+              {{message}}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field  appearance="outline" class="example-full-width col-md-3">
+            <mat-label>Sale Price</mat-label>
+            <input  [formControlName]="'price'" required matInput type="number">
+             <mat-error *ngFor="let message of validation('price')">
+              {{message}}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="example-full-width col-md-3">
+            <mat-label>Tax Percent</mat-label>
+            <input [formControlName]="'taxPercent'"  required matInput type="number">
+             <mat-error *ngFor="let message of validation('taxPercent')">
+              {{message}}
+            </mat-error>
+          </mat-form-field>
+          
+         </div>
+        <div class="d-flex justify-content-end">
+          <div class="flex-item">
+            <button type="button"  mat-raised-button color="dark" [routerLink]="'/pages/products'" mat-button class=" btn btn-danger"
+              style="margin-right: 10px !important;">Cancel</button>
+          </div>
+          <div class="flex-item hide-item">
+            <button type="submit"  mat-raised-button color="primary" class=" btn btn-primary" (click)="submit()">Update</button>
+          </div>
+  
+  
+        </div>
+  
+      </form>
+    </div>
+  </div>

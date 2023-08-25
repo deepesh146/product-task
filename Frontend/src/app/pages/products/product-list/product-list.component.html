@@ -1,0 +1,114 @@
+<div class="card mt-4">
+  <div class="d-flex bd-highlight  align-items-center container-fluid">
+    <div class="flex-item">
+      <h2 class="g-0 m-0 mr-auto card-header py-3 font-bold bg1" style="border: 0;">Products</h2>
+    </div>
+    <div [routerLink]="['/pages/products/create-product']" class="ms-auto flex-item bd-highlight">
+      <button class="ml-auto" mat-raised-button color="primary">Add Product</button>
+    </div>
+  </div>
+  <hr>
+  <div class="card-body">
+    <div class="example-header d-flex flex-row justify-content-end">
+      <!-- <mat-icon style="font-size: 45px;height: 45px;width: 45px;">search</mat-icon> -->
+      <mat-form-field style="width: 30%" class="" appearance="outline">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search">
+      </mat-form-field>
+    </div>
+    <div class="custom2">
+
+
+      <table class="mat-elevation-z8 custom" mat-table [dataSource]="dataSource" matSort matSortActive="createdAt"
+        matSortDisableClear matSortDirection="desc">
+
+
+        <ng-container *ngIf="!loading">
+
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+              No data matching the filter.
+            </td>
+          </tr>
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef>id</mat-header-cell>
+            <mat-cell *matCellDef="let element; let i = index;"> {{ (paginatorRef.pageIndex * paginatorRef.pageSize) +
+              (i
+              + 1) }}</mat-cell>
+            <!-- <mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </mat-cell> -->
+          </ng-container>
+
+
+
+          <!-- 'id', 'name', 'sku', 'stock','price','active'] -->
+          <!-- Progress Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"><span class="hello"> {{row.name}}</span> </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="sku">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> SKU </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.sku}} </mat-cell>
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="barcode">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Barcode </mat-header-cell>
+            <mat-cell *matCellDef="let row"> <span class="hello">{{row.barcode}}</span> </mat-cell>
+            <!-- <td class="hello" *matCellDef="let row"> {{row.barcode}} </td> -->
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="stock">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Stock </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.stock}} </mat-cell>
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.price}} </mat-cell>
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="active">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Active </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <span *ngIf="row.active==true" class="text-success">Active</span>
+              <span *ngIf="row.active==false" class="text-danger">Inctive</span>
+            </mat-cell>
+          </ng-container>
+
+
+          <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Action </mat-header-cell>
+            <mat-cell style="white-space: normal; " *matCellDef="let row">
+              <!-- <div style="  white-space: nowrap; overflow: scroll;"> -->
+              <button [routerLink]="['/pages/products/view-product', row.id]"
+                class="btn btn-sm text-secondary"><mat-icon>remove_red_eye</mat-icon></button>
+              <button (click)="openEditDialog(row.name,row.id)"
+                class="btn btn-sm text-secondary"><mat-icon>edit</mat-icon></button>
+              <button (click)="openDialog(row.name,row.id)" class="btn btn-sm text-danger"
+                style="margin-left: 4px;"><mat-icon>delete</mat-icon></button>
+
+
+              <!-- </div> -->
+            </mat-cell>
+
+          </ng-container>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <!-- <ng-container *ngIf="!loading"> -->
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+        <!-- </ng-container> -->
+      </table>
+      <div *ngIf="loading" class="spinner1">
+        <mat-progress-spinner [diameter]="25" color="primary" mode="indeterminate">
+        </mat-progress-spinner>
+      </div>
+    </div>
+    <div>
+      <mat-paginator #paginatorRef [length]="totalResults" [pageSizeOptions]="[5,10,20,30]" aria-label="Select page"
+        showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

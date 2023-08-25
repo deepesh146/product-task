@@ -1,0 +1,25 @@
+body{
+    color: #721c24; 
+}
+
+  .unauthorized-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    background-color: #f8d7da; 
+    border: 1px solid #f5c6cb; 
+    color: #721c24; 
+    width: 100%; 
+  }
+  
+  .unauthorized-container h2 {
+    margin-bottom: 10px;
+  }
+  
+  .unauthorized-container p {
+    margin-bottom: 0;
+    padding: 10px;
+  }

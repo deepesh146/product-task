@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>{{data.heading}}</h2>
+<form [formGroup]="topupForm" class="example-form p-3">
+    <mat-dialog-content>
+
+
+        <div class="container">
+            <div class="row">
+                <mat-form-field appearance="outline" class="col-12">
+                    <input type="text" required matInput [formControl]="searchControl" placeholder="Search for a product"
+                        [matAutocomplete]="auto" />
+                    <mat-autocomplete  #auto="matAutocomplete" [displayWith]="displayFn">
+                        <mat-option *ngFor="let option of options" [value]="option">
+                            {{ option.name }} ({{ option.barcode }})
+                        </mat-option>
+                    </mat-autocomplete>
+                    <mat-error *ngIf="searchControl.hasError('required')">Username is required</mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-12" appearance="outline">
+                    <mat-label>Quantity</mat-label>
+
+                    <input required matInput [formControl]="quantity" type="number">
+                    <mat-error *ngIf="quantity.hasError('required')">Quantity is required</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>{{ data.cancelText }}</button>
+        <button mat-raised-button color="primary" (click)="submit()">{{data.submitText}}</button>
+    </mat-dialog-actions>
+</form>

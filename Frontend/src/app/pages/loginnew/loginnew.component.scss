@@ -1,0 +1,56 @@
+.image1 {
+  z-index: -3;
+  background : url("/assets/1.jpg") no-repeat;
+  
+  width: 100%;
+  height: 100%;
+  
+}
+
+#login-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.7em;
+  width: 350px;
+  // height: 100%;
+  // margin: 100px;
+  -moz-opacity:.80;
+  filter:alpha(opacity=80);
+  opacity:.80;
+  z-index: 10;
+  opacity: 100;
+  background-color:rgba(255, 255, 255, 0.762);
+  position: relative;
+  border: none;
+}
+
+.Sign-Up-btn {
+  margin-top: 0.5em;
+  height: 2.5em;
+}
+
+.Login-btn {
+  margin-top: 0.5em;
+  height: 2.5em;
+  float: right;
+}
+
+.footer-sec {
+  text-align: center;
+}
+
+.footer-sec a {
+  text-decoration: none;
+}
+
+
+.login-form-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  cursor: pointer;
+}

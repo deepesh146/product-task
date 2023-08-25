@@ -1,0 +1,19 @@
+/* Custom styles for disabled form controls */
+form[readonly] mat-label,
+form[readonly] mat-select,
+form[readonly] input[disabled],
+form[readonly] textarea[disabled],
+form[readonly] select[disabled] {
+
+    color: black !important;
+    opacity: 1;
+    /* Adjust the opacity value as needed */
+    // pointer-events: none;
+    cursor: text;
+    
+    /* Disable pointer events to prevent interaction */
+}
+
+form[readonly] .hide-item {
+    display: none !important;
+}

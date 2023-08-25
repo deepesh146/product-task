@@ -1,0 +1,106 @@
+@media (min-width:992px) {
+  .vertical-nav {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #f8f8f8;
+    overflow-y: auto;
+    padding-top: 30px
+  }
+}
+
+
+
+.mat-header-cell {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mat-cell {
+  text-align: center;
+  justify-content: center;
+}
+
+.hello {
+  // text-align: center;
+  // justify-content: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.bg1{
+  background: none  !important;
+  border: 0 !important;
+
+  span{
+      font-weight: bold;
+      font-style: italic;
+  }
+}
+
+
+.custom2 {
+  width: 100% !important;
+  overflow: auto;
+  // height: 100px !important;
+}
+.spinner1 {
+  // mat-cell {
+  //   display: none !important;
+  // }
+
+  display: flex;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.mat-column-id {
+  // flex: 0 0 10%;
+  flex: none;
+  width: 15px !important;
+}
+
+.mat-column-name {
+  // flex: 0 0 10%;
+  flex: none;
+  width: 300px !important;
+}
+
+
+.mat-column-sku {
+  // flex: 0 0 10%;
+
+}
+
+.mat-column-barcode {
+  // flex: 0 0 10%;
+
+}
+
+.mat-column-stock {
+  // flex: 0 0 10%;
+
+}
+
+.mat-column-price {
+  // flex: 0 0 10%;
+
+}
+
+.mat-column-active {
+  // flex: 0 0 10%;
+
+}
+
+.mat-column-action {
+  // flex: 0 0 10%;
+  flex: none;
+  width: 15% !important;
+
+}

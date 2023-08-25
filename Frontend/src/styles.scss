@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+//   "@angular/material/prebuilt-themes/indigo-pink.css",
+
+
+//snackbar
+
+.mat-simple-snackbar {
+  font-size: 1.2em !important;
+  color: white !important;
+
+}
+
+.snackbar-error {
+  .mdc-snackbar__surface {
+    background-color: rgb(144, 42, 42) !important;
+    color: white !important;
+  }
+
+}
+
+.snackbar-success {
+  .mdc-snackbar__surface {
+    background-color: rgb(20, 100, 20) !important;
+    // color: purple !important;
+  }
+
+  // background-color: green !important;
+  // color: purple !important;
+
+}
+
+.snackbar-info {
+  background-color: blue !important;
+}
